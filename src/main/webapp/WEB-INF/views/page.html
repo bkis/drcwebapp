@@ -52,6 +52,8 @@
 							aria-controls="search" role="tab" data-toggle="tab">Search</a></li>
 						<li role="presentation"><a href="#export"
 							aria-controls="export" role="tab" data-toggle="tab">Export</a></li>
+						<li role="presentation"><a href="#places"
+							aria-controls="places" role="tab" data-toggle="tab">Places</a></li>
 					</ul>
 					<!-- / NAV-TABS -->
 					<!-- TAB-PANES -->
@@ -61,15 +63,22 @@
 						<div role="tabpanel" class="tab-pane active" id="translate">
 							<div th:replace="fragments/translation :: translation"></div>
 						</div>
-						<div role="tabpanel" class="tab-pane" id="annotate">Annotation not
-							implemented yet...</div>
+						<div role="tabpanel" class="tab-pane" id="annotate">Annotation
+							not implemented yet...</div>
 						<div role="tabpanel" class="tab-pane" id="search">
 							<div th:replace="fragments/search :: searchForm"></div>
 						</div>
 						<div role="tabpanel" class="tab-pane" id="export">Export in
-							what so ever ...</div>
-					</div>
-					<!-- / TAB-PANES -->
+							what so ever ...
+						</div>
+						<div role="tabpanel" class="tab-pane" id="places">
+							<iframe scrolling="no" marginheight="0" marginwidth="0"
+								src="http://www.openstreetmap.org/export/embed.html?bbox=7.214399278163911%2C51.4773804508322%2C7.21887856721878%2C51.478818765626976&amp;layer=mapnik&amp;marker=51.478099613899154%2C7.216638922691345"
+								style="border: 0px solid black" frameborder="0">
+							</iframe>
+						</div>
+				</div>
+				<!-- / TAB-PANES -->
 				</div>
 			</div>
 		</div>
