@@ -71,13 +71,22 @@
 						<div role="tabpanel" class="tab-pane" id="export">Export in
 							what so ever ...
 						</div>
-						<div role="tabpanel" class="tab-pane" id="places">
-							<iframe scrolling="no" marginheight="0" marginwidth="0"
-								src="http://www.openstreetmap.org/export/embed.html?bbox=7.214399278163911%2C51.4773804508322%2C7.21887856721878%2C51.478818765626976&amp;layer=mapnik&amp;marker=51.478099613899154%2C7.216638922691345"
-								style="border: 0px solid black" frameborder="0">
-							</iframe>
+						<div role="tabpanel" class="tab-pane" id="places" style="width:786px; height:480px; background-color:#AAAAAA; margin-left:0px; margin-right:0px">
+							<!--  MAP GOES HERE -->
 						</div>
-				</div>
+						
+						<!-- OSM -->
+						<script src="http://www.openlayers.org/api/OpenLayers.js">
+						</script>
+						<script>
+							map = new OpenLayers.Map("places");
+							map.addLayer(new OpenLayers.Layer.OSM());
+							ourpoint = new OpenLayers.LonLat(46.66, 9.33)
+							ourpoint.transform(new OpenLayers.Projection("EPSG:4326"), map.getProjectionObject());
+						</script>
+						<!-- /OSM -->
+						
+					</div>
 				<!-- / TAB-PANES -->
 				</div>
 			</div>
