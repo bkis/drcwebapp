@@ -76,13 +76,22 @@
 						</div>
 						
 						<!-- OSM -->
-						<script src="http://www.openlayers.org/api/OpenLayers.js">
-						</script>
+						<script src="http://www.openlayers.org/api/OpenLayers.js"></script>
 						<script>
 							map = new OpenLayers.Map("places");
 							map.addLayer(new OpenLayers.Layer.OSM());
-							ourpoint = new OpenLayers.LonLat(46.66, 9.33)
-							ourpoint.transform(new OpenLayers.Projection("EPSG:4326"), map.getProjectionObject());
+							
+							var lonLat = new OpenLayers.LonLat(9.0112351,46.6165803).transform(new OpenLayers.Projection('EPSG:4326'), new OpenLayers.Projection('EPSG:3857'));
+							
+							var mark = new OpenLayers.LonLat(8.4266177,47.2349836).transform(new OpenLayers.Projection('EPSG:4326'), new OpenLayers.Projection('EPSG:3857'));
+							var markers = new OpenLayers.Layer.Markers("Markers");
+							map.addLayer(markers);
+							markers.addMarker(new OpenLayers.Marker(mark));
+							
+							var zoom = 8;
+							map.setCenter(lonLat, zoom);
+							
+							<!-- http://nominatim.openstreetmap.org/search?q=paris&format=xml -->
 						</script>
 						<!-- /OSM -->
 						
